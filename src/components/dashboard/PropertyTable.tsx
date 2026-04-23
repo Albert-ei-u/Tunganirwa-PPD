@@ -23,6 +23,7 @@ const PropertyTable = () => {
             <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Area</th>
             <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Views</th>
             <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Status</th>
+            
             <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Days Left</th>
             <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100 text-center">Action</th>
           </tr>
