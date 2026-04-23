@@ -20,6 +20,7 @@ export default function Home() {
           title="Total Ads Posted" 
           value="06" 
           icon={FileText} 
+          
           iconColor="#FF9F43" 
         />
         <StatsCard 
