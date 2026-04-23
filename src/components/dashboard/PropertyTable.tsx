@@ -42,7 +42,6 @@ const PropertyTable = () => {
               <td className="px-6 py-4 text-sm">{prop.views}</td>
               <td className="px-6 py-4">
                 <span className={`px-3 py-1 rounded text-xs font-bold ${
-                  
                   prop.status === 'Sold' ? 'bg-green-50 text-green-600' : 'bg-blue-50 text-blue-600'
                 }`}>
                   {prop.status}
