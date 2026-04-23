@@ -23,6 +23,7 @@ export default function Home() {
           iconColor="#FF9F43" 
         />
         <StatsCard 
+        
           title="Total Views" 
           value="24" 
           icon={Eye} 
