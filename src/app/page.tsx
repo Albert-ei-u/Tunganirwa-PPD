@@ -9,58 +9,56 @@ import {
 } from 'lucide-react';
 import StatsCard from '@/components/dashboard/StatsCard';
 import PropertyTable from '@/components/dashboard/PropertyTable';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-10">
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <StatsCard 
           title="Total Ads Posted" 
           value="06" 
           icon={FileText} 
           iconColor="#FF9F43" 
-          bgColor="#FFF7F0" 
         />
         <StatsCard 
           title="Total Views" 
           value="24" 
           icon={Eye} 
-          iconColor="#4C84FF" 
-          bgColor="#EBF2FF" 
+          iconColor="#FF9F43" 
         />
         <StatsCard 
           title="Interest Received" 
           value="12" 
           icon={Heart} 
           iconColor="#FF9F43" 
-          bgColor="#FFF7F0" 
         />
         <StatsCard 
           title="Interest Sent" 
           value="09" 
-          icon={Send} 
+          icon={Heart} 
           iconColor="#FF9F43" 
-          bgColor="#FFF7F0" 
         />
       </div>
 
       {/* Toolbar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="flex items-center bg-white rounded-full pl-6 shadow-sm border border-gray-100 w-full sm:w-[400px]">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-2">
+        <div className="flex items-center bg-white rounded-full px-8 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50 w-full sm:w-[450px]">
           <input 
             type="text" 
             placeholder="Search PPD ID" 
-            className="bg-transparent border-none outline-none flex-1 py-3 text-sm" 
+            className="bg-transparent border-none outline-none flex-1 text-base text-gray-600 placeholder:text-gray-300" 
           />
-          <div className="w-12 h-12 flex items-center justify-center">
-            <Search size={18} className="text-primary" />
+          <div className="pl-4 border-l border-gray-100 ml-4">
+            <Search size={22} className="text-primary" />
           </div>
         </div>
-        <button className="bg-primary text-white px-8 py-3 rounded-full flex items-center gap-2 font-bold shadow-lg shadow-blue-200 hover:scale-[1.02] transition-transform">
+        
+        <Link href="/add-property" className="bg-primary text-white px-10 py-4 rounded-full flex items-center gap-2 font-bold shadow-[0_10px_25px_rgba(76,132,255,0.4)] hover:translate-y-[-2px] transition-all">
           <Plus size={20} />
           <span>Add Property</span>
-        </button>
+        </Link>
       </div>
 
       {/* Table Section */}
