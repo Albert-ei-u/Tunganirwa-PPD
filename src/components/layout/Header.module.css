@@ -1,0 +1,70 @@
+.header {
+  height: var(--header-height);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  z-index: 90;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 16px;
+  width: 350px;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  margin-left: 10px;
+  flex: 1;
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.userId {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.visitLink {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  padding-right: 24px;
+  border-right: 1px solid var(--border);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}

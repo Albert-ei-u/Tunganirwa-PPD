@@ -1,0 +1,75 @@
+.tableContainer {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.th {
+  padding: 16px 24px;
+  background-color: #F8FAFC;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.td {
+  padding: 16px 24px;
+  color: var(--text-main);
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tr:last-child .td {
+  border-bottom: none;
+}
+
+.propertyImage {
+  width: 40px;
+  height: 40px;
+  background-color: #F1F5F9;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CBD5E1;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badgeSold {
+  background-color: #ECFDF5;
+  color: #10B981;
+}
+
+.badgeUnsold {
+  background-color: #F0FDF4; /* Note: The design shows green for unsold too, but maybe a lighter blue? */
+  color: #3B82F6;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionButton {
+  color: #CBD5E1;
+  transition: color 0.2s;
+}
+
+.actionButton:hover {
+  color: var(--primary);
+}

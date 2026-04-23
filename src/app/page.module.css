@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 100px;
+  padding: 4px 4px 4px 20px;
+  box-shadow: var(--shadow);
+  width: 400px;
+}
+
+.searchField {
+  border: none;
+  background: none;
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.searchField::placeholder {
+  color: var(--text-muted);
+}
+
+.searchIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addButton {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px 0 rgba(76, 132, 255, 0.39);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #3b71e8;
+  transform: translateY(-1px);
+}
