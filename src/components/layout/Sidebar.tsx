@@ -13,7 +13,6 @@ const navItems = [
   { name: 'Sent Interest', icon: '/play_for_work_black_24dp.png', href: '/sent', type: 'image', rotate: 180 },
   { name: 'Property Views', icon: Eye, href: '/views', type: 'lucide' },
   { name: 'Tariff Plan', icon: '/sell_black_24dp.png', href: '/tariff', type: 'image' },
-  
 ];
 
 const Sidebar = () => {
