@@ -45,6 +45,7 @@ const Sidebar = () => {
                     src={item.icon as string} 
                     alt={item.name} 
                     width={20} 
+                    
                     height={20} 
                     className="transition-all"
                     style={{ 

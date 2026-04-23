@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Upload } from 'lucide-react';
+import { ChevronDown, Upload, Camera } from 'lucide-react';
 
 const steps = [
   { id: 1, name: 'Basic Info' },
@@ -101,25 +101,37 @@ export default function AddPropertyPage() {
           </div>
         )}
 
-        {/* STEP 3: GENERAL INFO */}
+        {/* STEP 3: GENERAL INFO (UPDATED) */}
         {currentStep === 3 && (
-          <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-right-4 duration-500">
-            <div className="flex flex-col gap-2">
-              <label className="text-sm font-bold text-gray-500">Property Image</label>
-              <div className="border-2 border-dashed border-gray-200 rounded-2xl h-48 flex flex-col items-center justify-center gap-4 text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer">
-                <Upload size={40} />
-                <span className="font-medium text-lg">Click to upload photos</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
+            {[
+              { label: 'Name', placeholder: 'Owner' },
+              { label: 'Mobile', placeholder: 'Enter Mobile Number', isInput: true },
+              { label: 'Posted by', placeholder: 'Posted By' },
+              { label: 'Sale Type', placeholder: 'Please Select' },
+              { label: 'Featured Package', placeholder: 'Please Select' },
+              { label: 'PPD Package', placeholder: 'Please Select' },
+            ].map((field, i) => (
+              <div key={i} className="flex flex-col gap-2">
+                <label className="text-sm font-bold text-gray-500">{field.label}</label>
+                {field.isInput ? (
+                  <input type="text" placeholder={field.placeholder} className="border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-primary placeholder:text-gray-200" />
+                ) : (
+                  <div className="relative">
+                    <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-gray-400 outline-none focus:border-primary appearance-none cursor-pointer">
+                      <option>{field.placeholder}</option>
+                    </select>
+                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none" size={18} />
+                  </div>
+                )}
               </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-               <div className="flex flex-col gap-2">
-                 <label className="text-sm font-bold text-gray-500">Property Video</label>
-                 <input type="text" placeholder="YouTube Link" className="border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-primary placeholder:text-gray-200" />
-               </div>
-               <div className="flex flex-col gap-2">
-                 <label className="text-sm font-bold text-gray-500">External Link</label>
-                 <input type="text" placeholder="Example: www.property.com" className="border border-gray-200 rounded-lg px-4 py-3 outline-none focus:border-primary placeholder:text-gray-200" />
-               </div>
+            ))}
+            
+            <div className="col-span-1 flex items-center gap-4 mt-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-blue-100 cursor-pointer hover:scale-105 transition-all">
+                <Camera size={28} />
+              </div>
+              <span className="text-sm font-bold text-gray-400">Add Photo</span>
             </div>
           </div>
         )}
@@ -155,9 +167,19 @@ export default function AddPropertyPage() {
 
         {/* Buttons */}
         <div className="flex justify-center gap-6 mt-16">
-          <Link href="/" className="bg-primary text-white px-12 py-4 rounded-full font-bold shadow-lg shadow-blue-100 hover:scale-[1.02] transition-all text-center min-w-[200px]">
-            Cancel
-          </Link>
+          {currentStep === 1 ? (
+            <Link href="/" className="bg-primary text-white px-12 py-4 rounded-full font-bold shadow-lg shadow-blue-100 hover:scale-[1.02] transition-all text-center min-w-[200px]">
+              Cancel
+            </Link>
+          ) : (
+            <button 
+              onClick={() => setCurrentStep(currentStep - 1)}
+              className="bg-primary text-white px-12 py-4 rounded-full font-bold shadow-lg shadow-blue-100 hover:scale-[1.02] transition-all min-w-[200px]"
+            >
+              Previous
+            </button>
+          )}
+          
           <button 
             onClick={() => currentStep < 4 && setCurrentStep(currentStep + 1)}
             className="bg-secondary text-white px-12 py-4 rounded-full font-bold shadow-lg shadow-orange-100 hover:scale-[1.02] transition-all min-w-[200px]"
