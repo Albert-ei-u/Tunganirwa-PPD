@@ -1,6 +1,5 @@
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
-import styles from './StatsCard.module.css';
 
 interface StatsCardProps {
   title: string;
@@ -12,13 +11,13 @@ interface StatsCardProps {
 
 const StatsCard = ({ title, value, icon: Icon, iconColor, bgColor }: StatsCardProps) => {
   return (
-    <div className={styles.card}>
-      <div className={styles.left}>
-        <span className={styles.title}>{title}</span>
-        <span className={styles.value}>{value}</span>
+    <div className="bg-white rounded-xl p-6 flex items-center justify-between shadow-sm border border-gray-100 flex-1 min-w-[240px]">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium text-muted">{title}</span>
+        <span className="text-3xl font-bold text-[#1A202C]">{value}</span>
       </div>
       <div 
-        className={styles.iconWrapper} 
+        className="w-12 h-12 rounded-lg flex items-center justify-center" 
         style={{ backgroundColor: bgColor }}
       >
         <Icon size={24} color={iconColor} />

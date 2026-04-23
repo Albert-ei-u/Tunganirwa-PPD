@@ -20,9 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Sidebar />
-        <div style={{ marginLeft: "var(--sidebar-width)", paddingTop: "var(--header-height)" }}>
+        {/* Main Content Wrapper */}
+        <div className="ml-64 pt-[70px]">
           <Header />
-          <main style={{ padding: "32px 40px", minHeight: "calc(100vh - var(--header-height))" }}>
+          <main className="p-8 min-h-[calc(100vh-70px)] bg-background">
             {children}
           </main>
         </div>

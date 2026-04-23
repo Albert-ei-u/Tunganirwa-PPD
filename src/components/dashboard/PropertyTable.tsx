@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image as ImageIcon, Eye, Edit2 } from 'lucide-react';
-import styles from './PropertyTable.module.css';
 
 const properties = [
   { id: 'PPD1125', type: 'Plot', contact: '97852 52525', area: '1200', views: '02', status: 'Sold', daysLeft: '00' },
@@ -13,44 +12,46 @@ const properties = [
 
 const PropertyTable = () => {
   return (
-    <div className={styles.tableContainer}>
-      <table className={styles.table}>
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 mt-6 overflow-hidden">
+      <table className="w-full text-left border-collapse">
         <thead>
-          <tr>
-            <th className={styles.th}>PPD ID</th>
-            <th className={styles.th}>Image</th>
-            <th className={styles.th}>Property</th>
-            <th className={styles.th}>Contact</th>
-            <th className={styles.th}>Area</th>
-            <th className={styles.th}>Views</th>
-            <th className={styles.th}>Status</th>
-            <th className={styles.th}>Days Left</th>
-            <th className={styles.th}>Action</th>
+          <tr className="bg-gray-50">
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">PPD ID</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Image</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Property</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Contact</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Area</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Views</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Status</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100">Days Left</th>
+            <th className="px-6 py-4 text-primary text-sm font-semibold border-b border-gray-100 text-center">Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-gray-100">
           {properties.map((prop) => (
-            <tr key={prop.id} className={styles.tr}>
-              <td className={styles.td}>{prop.id}</td>
-              <td className={styles.td}>
-                <div className={styles.propertyImage}>
+            <tr key={prop.id} className="hover:bg-gray-50 transition-colors group">
+              <td className="px-6 py-4 text-sm">{prop.id}</td>
+              <td className="px-6 py-4">
+                <div className="w-10 h-10 bg-gray-100 rounded flex items-center justify-center text-gray-400">
                   <ImageIcon size={18} />
                 </div>
               </td>
-              <td className={styles.td}>{prop.type}</td>
-              <td className={styles.td}>{prop.contact}</td>
-              <td className={styles.td}>{prop.area}</td>
-              <td className={styles.td}>{prop.views}</td>
-              <td className={styles.td}>
-                <span className={`${styles.badge} ${prop.status === 'Sold' ? styles.badgeSold : styles.badgeUnsold}`}>
+              <td className="px-6 py-4 text-sm font-medium">{prop.type}</td>
+              <td className="px-6 py-4 text-sm text-muted">{prop.contact}</td>
+              <td className="px-6 py-4 text-sm">{prop.area}</td>
+              <td className="px-6 py-4 text-sm">{prop.views}</td>
+              <td className="px-6 py-4">
+                <span className={`px-3 py-1 rounded text-xs font-bold ${
+                  prop.status === 'Sold' ? 'bg-green-50 text-green-600' : 'bg-blue-50 text-blue-600'
+                }`}>
                   {prop.status}
                 </span>
               </td>
-              <td className={styles.td}>{prop.daysLeft}</td>
-              <td className={styles.td}>
-                <div className={styles.actions}>
-                  <button className={styles.actionButton}><Eye size={18} /></button>
-                  <button className={styles.actionButton}><Edit2 size={18} /></button>
+              <td className="px-6 py-4 text-sm">{prop.daysLeft}</td>
+              <td className="px-6 py-4">
+                <div className="flex items-center justify-center gap-3 text-gray-300">
+                  <button className="hover:text-primary transition-colors"><Eye size={18} /></button>
+                  <button className="hover:text-primary transition-colors"><Edit2 size={18} /></button>
                 </div>
               </td>
             </tr>
