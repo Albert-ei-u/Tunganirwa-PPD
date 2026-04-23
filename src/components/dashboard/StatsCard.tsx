@@ -19,7 +19,6 @@ const StatsCard = ({ title, value, icon: Icon, iconColor }: StatsCardProps) => {
         <div className="flex items-center justify-center">
           <Icon size={46} color={iconColor} strokeWidth={1.8} />
         </div>
-        
       </div>
       {/* Thick solid blue bar at the bottom */}
       <div className="h-[6px] w-full bg-primary shadow-[0_-2px_10px_rgba(76,132,255,0.3)]"></div>
