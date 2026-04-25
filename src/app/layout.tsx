@@ -6,7 +6,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export const metadata: Metadata = {
   title: "PPD Property Dashboard",
   description: "Modern Property Management Dashboard",
