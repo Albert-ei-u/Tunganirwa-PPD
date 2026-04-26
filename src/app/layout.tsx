@@ -17,10 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
+
     <html lang="en">
       <body className={inter.className}>
         <Sidebar />
+        
         {/* Main Content Wrapper */}
         <div className="ml-64 pt-[70px]">
           <Header />
