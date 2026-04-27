@@ -32,7 +32,6 @@ const PropertyTable = () => {
             <tr key={prop.id} className="hover:bg-gray-50 transition-colors group">
               <td className="px-6 py-4 text-sm">{prop.id}</td>
               <td className="px-6 py-4">
-                
                 <div className="w-10 h-10 bg-gray-100 rounded flex items-center justify-center text-gray-400">
                   <ImageIcon size={18} />
                 </div>
