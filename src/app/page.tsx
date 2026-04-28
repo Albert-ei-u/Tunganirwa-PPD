@@ -32,7 +32,6 @@ export default function Home() {
           title="Interest Received" 
           value="12" 
           icon={Heart} 
-          
           iconColor="#FF9F43" 
         />
         <StatsCard 
