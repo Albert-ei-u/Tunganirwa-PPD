@@ -46,7 +46,6 @@ const PropertyTable = () => {
                 }`}>
                   {prop.status}
                 </span>
-                
               </td>
               <td className="px-6 py-4 text-sm">{prop.daysLeft}</td>
               <td className="px-6 py-4">
