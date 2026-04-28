@@ -17,7 +17,8 @@ export default function Home() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <StatsCard 
-          title="Total Ads Posted" 
+          title="Total Ads Posted"
+           
           value="06" 
           icon={FileText} 
           iconColor="#FF9F43" 
@@ -31,7 +32,7 @@ export default function Home() {
         <StatsCard 
           title="Interest Received" 
           value="12" 
-          
+
           icon={Heart} 
           iconColor="#FF9F43" 
         />
