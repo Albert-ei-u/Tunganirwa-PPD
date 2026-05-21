@@ -10,6 +10,7 @@ interface StatsCardProps {
 
 const StatsCard = ({ title, value, icon: Icon, iconColor }: StatsCardProps) => {
   return (
+    
     <div className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-50 flex flex-col flex-1 min-w-[240px] overflow-hidden">
       <div className="p-8 flex items-center justify-between">
         <div className="flex flex-col gap-1">
